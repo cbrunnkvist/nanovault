@@ -23,7 +23,9 @@
     "desktop:dev": "electron main.js",
     "desktop:local": "electron-builder",
     "desktop:full": "electron-builder -wml --x64",
-    "desktop:publish": "build -wml --x64 -p always"
+    "desktop:publish": "build -wml --x64 -p always",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "private": true,
   "dependencies": {
@@ -49,7 +51,8 @@
     "qrcode": "^1.2.0",
     "rxjs": "^5.5.2",
     "tweetnacl": "^1.0.0",
-    "zone.js": "^0.8.14"
+    "zone.js": "^0.8.14",
+    "snyk": "^1.116.2"
   },
   "devDependencies": {
     "@angular/cli": "1.6.0",
@@ -116,5 +119,6 @@
       ],
       "role": "Viewer"
     }
-  }
+  },
+  "snyk": true
 }
